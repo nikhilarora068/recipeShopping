@@ -1,9 +1,13 @@
-<app-header></app-header>
+<app-header (selectedFeature)="onSelctFeature($event)"></app-header>
 
 <div class="container-fluid">
+  <br />
   <div class="row">
     <div class="col-md-12">
-      <p>hello world</p>
+      <app-recipes *ngIf="selectedFeature === 'recipe'"></app-recipes>
+      <app-shopping-list
+        *ngIf="selectedFeature === 'shopping-list'"
+      ></app-shopping-list>
     </div>
   </div>
 </div>
